@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zomato Restaurant Analysis Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <div class="logo">Zomato <span>Analytics</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Dashboard</a></li>
+      <li><a href="#analytics">Analytics</a></li>
+      <li><a href="#restaurants">Restaurants</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="container">
+    <h1>Explore Bangalore's Restaurant Landscape Through Data</h1>
+    <p>A simple analysis of 7,000+ restaurants in Bangalore — ratings, cost, and locations.</p>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search restaurant, cuisine or area...">
+      <button id="searchBtn">Search</button>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div class="stat-box">
+      <h3 id="statTotal">7086</h3>
+      <p>Total Restaurants</p>
+    </div>
+    <div class="stat-box">
+      <h3 id="statRating">4.1</h3>
+      <p>Average Rating</p>
+    </div>
+    <div class="stat-box">
+      <h3 id="statCost">₹560</h3>
+      <p>Average Cost for Two</p>
+    </div>
+    <div class="stat-box">
+      <h3 id="statAreas">93</h3>
+      <p>Areas Covered</p>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYTICS / CHARTS -->
+<section class="analytics-section" id="analytics">
+  <div class="container">
+    <h2>Data Analysis</h2>
+    <p class="section-sub">Key insights from the Zomato dataset (generated using Python, Pandas &amp; Matplotlib).</p>
+
+    <div class="charts-grid">
+      <div class="chart-card">
+    <h4>Most Affordable Areas</h4>
+    <img src="images/cheapest_areas_avg_cost.png"
+         alt="Cheapest Areas"
+         class="chart-image">
+    <p class="chart-note">
+        Localities with the lowest average cost for two.
+    </p>
+</div>
+
+<div class="chart-card">
+    <h4>Online Order vs Rating</h4>
+    <img src="images/online_order_vs_rating.png"
+         alt="Online Order vs Rating"
+         class="chart-image">
+    <p class="chart-note">
+        Compares customer ratings between restaurants with and without online ordering.
+    </p>
+</div>
+
+<div class="chart-card">
+    <h4>Rating Comparison</h4>
+    <img src="images/rating_comparison.png"
+         alt="Rating Comparison"
+         class="chart-image">
+    <p class="chart-note">
+        Overall spread of restaurant ratings across the dataset.
+    </p>
+  </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTAURANT EXPLORER -->
+<section class="restaurants-section" id="restaurants">
+  <div class="container">
+    <h2>Browse Restaurants</h2>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="online">Online Order</button>
+      <button class="filter-btn" data-filter="booking">Table Booking</button>
+      <button class="filter-btn" data-filter="top">Top Rated</button>
+    </div>
+
+    <p id="resultCount" class="result-count">Loading restaurants...</p>
+
+    <div class="restaurant-grid" id="restaurantGrid"></div>
+
+    <p id="noResults" class="no-results" style="display:none;">No restaurants found.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <p>Zomato Restaurant Analysis Dashboard — Mini Project</p>
+    <p class="tech-stack">Built with PostgreSQL, Spring Boot (Java), HTML, CSS &amp; JavaScript</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
